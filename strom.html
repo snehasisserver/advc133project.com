@@ -17,6 +17,8 @@
     <div class="container">
         <span id="span1">
             <h1 class="heading">Object Detection from Snehasis</h1>
+            <br>
+            <bdiv class="btn btn-success" id="noj"></div>
           </span>
           <br>
           <a class="btn btn-danger" style="border-radius: 10px; width: fit-content; padding-left: 10px; padding-right: 10px;float:right;" href="index.html">Back</a>
@@ -59,6 +61,7 @@ img5 = loadImage("Book.jpeg")
         noFill();
         stroke("#FF0000");
         rect(objects[i].x,objects[i].y,objects[i].width,objects[i].height);
+           document.getELementById("noj").innerHTML = "Out of 6 objects, no of objects detected = " + objects.length;
        }
     }
 }
