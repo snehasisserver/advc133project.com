@@ -10,8 +10,8 @@
 
   <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
-    <title>MY CITY :: Object Detection</title>
-    <link rel="icon" href="Howrah_Pano_3.jpg">
+    <title>Bed room :: Object Detection</title>
+    <link rel="icon" href="bedroom.jpg">
 </head>
 <body>
     <div class="container">
@@ -30,7 +30,7 @@
       var objects = [];
         var img6="";
         function preload(){
-            img6 = loadImage("Howrah_Pano_3.jpg")
+            img6 = loadImage("bedroom.jpg")
         }
         function setup(){
             canvas = createCanvas(500,500);
@@ -56,14 +56,14 @@
      objectDetector.detect(img6,gotResult);
        for(i = 0;i<objects.length;i++){
         document.getElementById("status").innerHTML=" Status : Detecting Object ";
-        document.getElementById("number_of_objects").innerHTML="Number of objects detected are : " + objects.length;
+        document.getElementById("noj").innerHTML="Out of 5 objects, no of objects detected = " + objects.length;
         fill("#FF0000");
         var percent = floor(objects[i].confidence * 100);
         text(objects[i].label + " " + percent + "%",objects[i].x+15,objects[i].y+15);
         noFill();
         stroke("#FF0000");
         rect(objects[i].x,objects[i].y,objects[i].width,objects[i].height);
-           document.getElementById("noj").innerHTML="Out of 5 objects, no of objects detected = " + objects.length;
+           
        }
     }
 }
